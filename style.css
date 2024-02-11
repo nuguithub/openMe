@@ -1,0 +1,54 @@
+body {
+	background: #fcc4d7;
+	overflow: hidden;
+}
+
+#hvd:hover ~ #flora {
+	transform: translateY(-60px);
+}
+
+#hvd:hover {
+	transform: scale(1.6) translateY(-80px);
+	opacity: 1;
+}
+
+#flora {
+	transition: transform 0.6s;
+}
+
+#hvd {
+	bottom: 100px;
+	opacity: 0;
+	transition: ease-out 0.6s;
+}
+
+@keyframes bounceAnimation {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: rotateZ(0);
+	}
+	40% {
+		transform: rotateZ(-5deg); /* Adjust the distance as needed */
+	}
+	60% {
+		transform: rotateZ(-5deg); /* Adjust the distance as needed */
+	}
+}
+
+@keyframes resetAnimation {
+	to {
+		transform: rotateZ(0);
+	}
+}
+
+#eyx {
+	animation: bounceAnimation 1s infinite;
+	transition: all ease-in-out;
+}
+
+#eyx:hover {
+	animation: resetAnimation 0.5s forwards;
+}
